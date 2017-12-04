@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ZpBase</string>
+
+    <string name="ex_str_loading">正在为您努力加载...</string>
+    <string name="ex_str_param_not_empty">参数不能为空</string>
+    <string name="ex_str_net_no">网络不可用</string>
+    <string name="ex_str_content_please_install_email">选择 Email 客户端</string>
+    <string name="ex_str_content_please_not_mark_app">请选中“允许安装非电子市场的应用程序选项”再试！</string>
+    <string name="ex_str_content_please_check_app_type">运行失败,请检查该应用的类型!</string>
+
+    <string name="date_ch_template">%1$d年%2$d月%3$d日</string>
+    <string name="date_ch_no_day_template">%1$d年%2$d月</string>
+
+</resources>

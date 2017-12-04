@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ZpNoteBook.iml" filepath="$PROJECT_DIR$/ZpNoteBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zpbase/zpbase.iml" filepath="$PROJECT_DIR$/zpbase/zpbase.iml" />
+    </modules>
+  </component>
+</project>
