@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">果壳</string>
+    <string name="zp_splash_skip">跳过 %1$s</string>
+
 </resources>
