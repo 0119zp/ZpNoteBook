@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/lock_login_username_imag"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/lock_login_username_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lock_login_username_imag"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="用户名:"
+        android:textColor="#222222"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/lock_login_errornum_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lock_login_username_tv"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#ff2244"
+        android:textSize="12dp" />
+
+    <zp.com.zpnotebook.login.wight.GestureLockView
+        android:id="@+id/login_gestureLockView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lock_login_errornum_tv"/>
+
+</RelativeLayout>

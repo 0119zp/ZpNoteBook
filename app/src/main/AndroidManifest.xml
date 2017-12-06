@@ -15,10 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <!-- 首页 -->
         <activity android:name=".home.MainActivity"/>
-
+        <!-- 登录页面 -->
         <activity android:name=".login.activity.ZpLoginActivity"/>
+        <!-- 手势设置页面 -->
+        <activity android:name=".center.ZpSetGestureActivity"/>
 
     </application>
 
