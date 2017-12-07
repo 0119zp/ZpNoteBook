@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="RoundImageView">
+        <attr name="borderWidth" format="reference|dimension"/>
+        <attr name="borderRadius" format="reference|dimension"/>
+        <attr name="borderColor" format="reference|color"/>
+        <attr name="hoverColor" format="reference|color"/>
+    </declare-styleable>
+
 </resources>

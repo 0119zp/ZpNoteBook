@@ -5,13 +5,13 @@
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <ImageView
+    <zp.com.zpnotebook.login.wight.CircleImageView
         android:id="@+id/lock_login_username_imag"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="40dp"
-        android:background="@mipmap/ic_launcher" />
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_user" />
 
     <TextView
         android:id="@+id/lock_login_username_tv"
