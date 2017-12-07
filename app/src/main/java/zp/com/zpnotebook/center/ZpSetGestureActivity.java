@@ -30,8 +30,8 @@ public class ZpSetGestureActivity extends ZpBaseActivity{
     @Override
     protected void exInitView() {
         super.exInitView();
-        mSetDec = findViewById(R.id.tv_set_gesture_dec);
-        mSetGesture = findViewById(R.id.glv_set_gesture_view);
+        mSetDec = (TextView) findViewById(R.id.tv_set_gesture_dec);
+        mSetGesture = (GestureLockView) findViewById(R.id.glv_set_gesture_view);
 
         initGestureView();
     }

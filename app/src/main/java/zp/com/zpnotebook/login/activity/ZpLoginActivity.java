@@ -28,8 +28,8 @@ public class ZpLoginActivity extends ZpBaseActivity{
     @Override
     protected void exInitView() {
         super.exInitView();
-        gestureLockView = findViewById(R.id.login_gestureLockView);
-        errText = findViewById(R.id.lock_login_errornum_tv);
+        gestureLockView = (GestureLockView) findViewById(R.id.login_gestureLockView);
+        errText = (TextView) findViewById(R.id.lock_login_errornum_tv);
 
         setGesture();
     }

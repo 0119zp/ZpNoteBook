@@ -27,7 +27,7 @@ public class ZpSplashActivity extends ZpBaseActivity{
     protected void exInitView() {
         super.exInitView();
 
-        mSplashSkip = findViewById(R.id.tv_spalsh_timer);
+        mSplashSkip = (TextView) findViewById(R.id.tv_spalsh_timer);
         mSplashSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -9,10 +9,10 @@
     </style>
 
     <declare-styleable name="RoundImageView">
-        <attr name="borderWidth" format="reference|dimension"/>
-        <attr name="borderRadius" format="reference|dimension"/>
-        <attr name="borderColor" format="reference|color"/>
-        <attr name="hoverColor" format="reference|color"/>
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="borderColor" format="color"/>
+        <attr name="hoverColor" format="color"/>
     </declare-styleable>
 
 </resources>
