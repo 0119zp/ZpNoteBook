@@ -41,11 +41,11 @@ public class ZpSplashActivity extends ZpBaseActivity{
     }
 
     private void initTimer() {
-        mTimer = new CountDownTimer((long) (5 * 1000), 1000) {
+        mTimer = new CountDownTimer((long) (5 * 1000), 1) {
 
             @Override
             public void onTick(long millisUntilFinished) {
-                int remainTime = (int) (millisUntilFinished / 1000L);
+                int remainTime = (int) (millisUntilFinished / 1000L) + 1;
                 mSplashSkip.setText(getResources().getString(R.string.zp_splash_skip, new Object[] {Integer.valueOf(remainTime)}));
             }
 

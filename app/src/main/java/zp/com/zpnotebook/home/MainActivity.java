@@ -18,7 +18,6 @@ import zp.com.zpnotebook.R;
 import zp.com.zpnotebook.account.AccountFragment;
 import zp.com.zpnotebook.center.fragment.CenterFragment;
 import zp.com.zpnotebook.home.fragment.HomeFragment;
-import zp.com.zpbase.broadcast.ExitAppReceiver;
 
 public class MainActivity extends ZpBaseActivity {
 
