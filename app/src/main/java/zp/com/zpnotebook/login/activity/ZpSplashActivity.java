@@ -7,7 +7,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import zp.com.zpbase.activity.ZpBaseActivity;
+import zp.com.zpbase.utils.ZpActivity;
 import zp.com.zpnotebook.R;
+import zp.com.zpnotebook.center.ZpSetGestureActivity;
 
 /**
  * Created by Administrator on 2017/12/4 0004.
@@ -31,8 +33,7 @@ public class ZpSplashActivity extends ZpBaseActivity{
         mSplashSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ZpSplashActivity.this, ZpLoginActivity.class);
-                startActivity(intent);
+                ZpActivity.getInstance().start(ZpSplashActivity.this, ZpLoginActivity.class);
                 finish();
             }
         });
@@ -52,8 +53,7 @@ public class ZpSplashActivity extends ZpBaseActivity{
             @Override
             public void onFinish() {
                 mSplashSkip.setText(getResources().getString(R.string.zp_splash_skip, new Object[] {Integer.valueOf(0)}));
-                Intent intent = new Intent(ZpSplashActivity.this, ZpLoginActivity.class);
-                startActivity(intent);
+                ZpActivity.getInstance().start(ZpSplashActivity.this, ZpLoginActivity.class);
                 finish();
             }
         };

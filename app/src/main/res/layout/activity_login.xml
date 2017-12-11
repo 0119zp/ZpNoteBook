@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <zp.com.zpnotebook.login.wight.CircleImageView
-        android:id="@+id/lock_login_username_imag"
+        android:id="@+id/iv_login_user_img"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="40dp"
@@ -14,10 +14,10 @@
         android:src="@drawable/icon_user" />
 
     <TextView
-        android:id="@+id/lock_login_username_tv"
+        android:id="@+id/tv_login_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lock_login_username_imag"
+        android:layout_below="@id/iv_login_user_img"
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="用户名:"
@@ -25,20 +25,31 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/lock_login_errornum_tv"
+        android:id="@+id/tv_login_err_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lock_login_username_tv"
-        android:layout_marginTop="15dp"
+        android:layout_below="@id/tv_login_user_name"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text=""
         android:textColor="#ff2244"
-        android:textSize="12dp" />
+        android:textSize="12sp" />
 
     <zp.com.zpnotebook.login.wight.GestureLockView
-        android:id="@+id/login_gestureLockView"
+        android:id="@+id/gv_login_gesture_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lock_login_errornum_tv"/>
+        android:layout_below="@id/tv_login_err_text"/>
+
+    <TextView
+        android:id="@+id/tv_login_set_gesture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gv_login_gesture_view"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="点我设置手势"
+        android:textColor="#053bea"
+        android:textSize="12sp" />
 
 </RelativeLayout>

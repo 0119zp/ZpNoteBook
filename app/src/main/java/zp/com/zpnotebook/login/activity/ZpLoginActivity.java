@@ -1,13 +1,17 @@
 package zp.com.zpnotebook.login.activity;
 
 import android.content.Intent;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import zp.com.zpbase.activity.ZpBaseActivity;
+import zp.com.zpbase.utils.ZpActivity;
 import zp.com.zpnotebook.R;
+import zp.com.zpnotebook.center.ZpSetGestureActivity;
 import zp.com.zpnotebook.home.MainActivity;
+import zp.com.zpnotebook.login.manager.GestureLockManager;
 import zp.com.zpnotebook.login.wight.GestureLockView;
 
 /**
@@ -18,6 +22,7 @@ public class ZpLoginActivity extends ZpBaseActivity{
 
     private GestureLockView gestureLockView;
     private TextView errText;
+    private TextView setGesture;
     private TranslateAnimation animation;
 
     @Override
@@ -28,15 +33,29 @@ public class ZpLoginActivity extends ZpBaseActivity{
     @Override
     protected void exInitView() {
         super.exInitView();
-        gestureLockView = (GestureLockView) findViewById(R.id.login_gestureLockView);
-        errText = (TextView) findViewById(R.id.lock_login_errornum_tv);
+        gestureLockView = (GestureLockView) findViewById(R.id.gv_login_gesture_view);
+        errText = (TextView) findViewById(R.id.tv_login_err_text);
+        setGesture = (TextView) findViewById(R.id.tv_login_set_gesture);
+
+        if (GestureLockManager.isHasGesturePwd(this)) {
+            setGesture.setVisibility(View.GONE);
+        } else {
+            setGesture.setVisibility(View.VISIBLE);
+        }
+
+        setGesture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ZpActivity.getInstance().start(ZpLoginActivity.this, ZpSetGestureActivity.class);
+            }
+        });
 
         setGesture();
     }
 
     public void setGesture(){
         gestureLockView.setLimitNum(5);
-        gestureLockView.setKey("12358");
+        gestureLockView.setKey(GestureLockManager.getSpGesturePwd(this));
 
         // 错误提示动画
         animation = new TranslateAnimation(-30, 30, 0, 0);
