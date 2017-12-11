@@ -1,6 +1,8 @@
 package zp.com.zpbase.activity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 
 import zp.com.zpbase.R;
+import zp.com.zpbase.broadcast.ExitAppReceiver;
 import zp.com.zpbase.fragment.ZpBaseOperationFragment;
 import zp.com.zpbase.fragment.ZpOperation;
 import zp.com.zpbase.fragment.ZpOperationNotNetworkFragment;
@@ -24,9 +27,14 @@ public class ZpBaseActivity extends ExBaseActivity{
     private FrameLayout mContainer;
     private View mUserView;
     private ZpBaseOperationFragment mOperationFragment;
+    private IntentFilter mFilterExitAction = new IntentFilter(ExitAppReceiver.APP_EXIT);
+    private ExitAppReceiver mReceiverExitAction = new ExitAppReceiver();
 
     @Override
     protected void onCreateInitLayout() {
+        // 注册退出app广播
+        registerReceiver(mReceiverExitAction, mFilterExitAction);
+
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rootView = layoutInflater.inflate(R.layout.zp_base_container, null);
 
@@ -159,5 +167,18 @@ public class ZpBaseActivity extends ExBaseActivity{
     @Override
     protected void exMessage(int what, Message msg) {
 
+    }
+
+    // 退出App
+    public void exitApp() {
+        Intent inExit = new Intent(ExitAppReceiver.APP_EXIT);
+        sendBroadcast(inExit);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 反注册退出app广播
+        unregisterReceiver(mReceiverExitAction);
     }
 }

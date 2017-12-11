@@ -1,11 +1,14 @@
 package zp.com.zpnotebook.home;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,11 +18,13 @@ import zp.com.zpnotebook.R;
 import zp.com.zpnotebook.account.AccountFragment;
 import zp.com.zpnotebook.center.fragment.CenterFragment;
 import zp.com.zpnotebook.home.fragment.HomeFragment;
+import zp.com.zpbase.broadcast.ExitAppReceiver;
 
 public class MainActivity extends ZpBaseActivity {
 
     private BottomNavigationView mBottomNav;
     private FragmentManager mFragmentManager;
+    private long preBackTime;
 
     @Override
     protected int exInitLayout() {
@@ -75,6 +80,23 @@ public class MainActivity extends ZpBaseActivity {
             }
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            long tempTime = System.currentTimeMillis();
+            if (tempTime - preBackTime >= 3 * 1000) {
+                preBackTime = tempTime;
+                Toast.makeText(this, "再按一次将退出果壳", Toast.LENGTH_SHORT).show();
+            } else {
+                exitApp();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
 
 
 }
