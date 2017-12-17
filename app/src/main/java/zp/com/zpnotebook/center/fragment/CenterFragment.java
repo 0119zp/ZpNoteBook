@@ -7,6 +7,7 @@ import zp.com.zpbase.fragment.ZpBaseFragment;
 import zp.com.zpbase.utils.ZpActivity;
 import zp.com.zpnotebook.R;
 import zp.com.zpnotebook.center.ZpSetGestureActivity;
+import zp.com.zpnotebook.center.wight.ZpJisuanDialog;
 
 /**
  * Created by Administrator on 2017/12/7 0007.
@@ -37,7 +38,8 @@ public class CenterFragment extends ZpBaseFragment implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_center_gesture_hind:
-
+                ZpJisuanDialog dialog = new ZpJisuanDialog(mActivity);
+                dialog.show();
                 break;
             case R.id.ll_center_gesture_set:
                 ZpActivity.getInstance().start(mActivity, ZpSetGestureActivity.class);
