@@ -17,18 +17,18 @@
             android:layout_marginTop="40dp"
             android:src="@drawable/icon_user" />
 
-        <TextView
+        <zp.com.zpnotebook.center.wight.GradientText
             android:id="@+id/tv_center_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="50dp"
             android:layout_toRightOf="@+id/iv_center_user_img"
-            android:text="用户名"
+            android:text="子夜之魂"
             android:textColor="#fff"
             android:textSize="14sp" />
 
-        <TextView
+        <zp.com.zpnotebook.center.wight.GradientText
             android:id="@+id/tv_center_user_dec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:layout_toRightOf="@+id/iv_center_user_img"
-            android:text="我喜欢湖畔的风，因为有水的宁静。"
+            android:text="一座拱桥，几点灯光。\n我喜欢湖畔的风，因为有水的宁静。"
             android:textColor="#fff"
             android:textSize="14sp" />
     </RelativeLayout>
