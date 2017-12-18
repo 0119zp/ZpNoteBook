@@ -27,4 +27,14 @@
         <!--<item name="android:backgroundDimAmount">0.6</item>-->
     </style>
 
+    <!-- 仿Ios开关按钮 -->
+    <declare-styleable name="IosSwitchView">
+        <attr name="openColor" format="reference|color" />
+        <attr name="closeColor" format="reference|color" />
+        <attr name="knobColor" format="reference|color" />
+        <attr name="backgroundColor" format="reference|color" />
+        <attr name="outerStrokeWidth" format="reference|dimension" />
+        <attr name="shadowSpace" format="reference|dimension" />
+    </declare-styleable>
+
 </resources>

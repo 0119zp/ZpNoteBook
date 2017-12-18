@@ -11,6 +11,7 @@ import android.text.TextUtils;
 public class GestureLockManager {
 
     private static final String GESTURE_LOGIN_PWD_KEY = "gesture_login";
+    private static final String GESTURE_TAG_KEY = "gesture_tag";
 
     // 动态手势密码数值
     public static String gesturePwd = "123456789";
@@ -49,6 +50,24 @@ public class GestureLockManager {
         SharedPreferences sp = context.getSharedPreferences("sp", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(GESTURE_LOGIN_PWD_KEY, gesturePwd);
+        editor.commit();
+    }
+
+    /**
+     * 得到缓存手势密码
+     */
+    public static boolean getSpGestureTag(Context context) {
+        SharedPreferences sp = context.getSharedPreferences("sp", Context.MODE_PRIVATE);
+        return sp.getBoolean(GESTURE_TAG_KEY, true);
+    }
+
+    /**
+     * 缓存手势密码
+     */
+    public static void saveSpGestureTag(Context context, boolean isTag) {
+        SharedPreferences sp = context.getSharedPreferences("sp", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean(GESTURE_TAG_KEY, isTag);
         editor.commit();
     }
 

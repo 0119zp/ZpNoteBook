@@ -17,7 +17,6 @@ import zp.com.zpnotebook.login.wight.GestureLockView;
 /**
  * Created by Administrator on 2017/12/4 0004.
  */
-
 public class ZpLoginActivity extends ZpBaseActivity{
 
     private GestureLockView gestureLockView;
@@ -56,6 +55,7 @@ public class ZpLoginActivity extends ZpBaseActivity{
     public void setGesture(){
         gestureLockView.setLimitNum(5);
         gestureLockView.setKey(GestureLockManager.getSpGesturePwd(this));
+        gestureLockView.setIsGone(GestureLockManager.getSpGestureTag(this));
 
         // 错误提示动画
         animation = new TranslateAnimation(-30, 30, 0, 0);
